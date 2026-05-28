@@ -1,0 +1,8 @@
+{
+    "languageMode": "strict",
+    "aliases": {
+        "packages": "roblox_packages",
+        "vide-components": "src/client/vide-components",
+        "react-components": "src/client/react-components"
+    }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "react-vs-vide",
+  "tree": {
+    "$className": "DataModel",
+
+    "ReplicatedStorage": {
+      "shared": {
+        "$path": "src/shared"
+      },
+      "packages": {
+        "$path": "roblox_packages"
+      }
+    },
+
+    "ServerScriptService": {
+      "server": {
+        "$path": "src/server"
+      }
+    },
+
+    "StarterPlayer": {
+      "StarterPlayerScripts": {
+        "client": {
+          "$path": "src/client"
+        }
+      }
+    }
+  }
+}
