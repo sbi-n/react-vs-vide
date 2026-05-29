@@ -21,14 +21,18 @@ local function ReactApp()
 	local colors, setColors = useState({})
 
 	useEffect(function()
-		RunService.RenderStepped:Connect(function(deltaTime: number)
-			local map = table.create(500, nil) :: any
-			for steps = 1, 500 do
+		local connection = RunService.RenderStepped:Connect(function(delta: number)
+			local map = table.create(5000, nil) :: any
+			for steps = 1, 5000 do
 				map[steps] = Color3.new(math.random(), math.random(), math.random())
 			end
 
 			setColors(map)
 		end)
+
+		return function()
+			connection:Disconnect()
+		end
 	end)
 
 	return e("ScreenGui", {
@@ -45,8 +49,8 @@ local function VideApp()
 	local colors = source({})
 
 	RunService.RenderStepped:Connect(function(deltaTime: number)
-		local map = table.create(500, nil) :: any
-		for steps = 1, 500 do
+		local map = table.create(20000, nil) :: any
+		for steps = 1, 20000 do
 			map[steps] = Color3.new(math.random(), math.random(), math.random())
 		end
 

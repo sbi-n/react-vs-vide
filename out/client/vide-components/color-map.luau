@@ -2,7 +2,7 @@ local Vide = require(game:GetService("ReplicatedStorage"):WaitForChild("packages
 
 local create = Vide.create
 local derive = Vide.derive
-local values = Vide.values
+local indexes = Vide.indexes
 
 local function ColorMap(props: {
 	Colors: Vide.Source<{ Color3 }>,
@@ -14,9 +14,9 @@ local function ColorMap(props: {
 			return UDim2.new(0, #props.Colors(), 0, 100)
 		end),
 
-		values(props.Colors, function(value, index)
+		indexes(props.Colors, function(value, index)
 			return create("Frame")({
-				Position = UDim2.fromOffset(index() - 1, 0),
+				Position = UDim2.fromOffset(index - 1, 0),
 				Size = UDim2.new(0, 1, 1, 0),
 				BackgroundColor3 = value,
 			})
